@@ -42,6 +42,7 @@ pipeline{
           rm -rf node_modules
           oc new-build .
           oc start-build angular-5-example --from-dir=. --follow
+          oadm policy add-scc-to-user anyuid -z default
         '''
       }
     }
