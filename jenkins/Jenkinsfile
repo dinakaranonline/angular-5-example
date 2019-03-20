@@ -24,7 +24,7 @@ pipeline{
         sh '''
           rm -rf node_modules
           oc start-build angular-5-example --from-dir=. --follow
-          oc login -u system:admin -n default
+          oc login https://master.na311.openshift.opentlc.com:443 --token=TV8EsK-VSFeO1eZ2BmpxNRa8Cv7KlNVDcnjEvdQoTjI
           oc adm policy add-scc-to-user anyuid -z default -n projectname
         '''
       }
